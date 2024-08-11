@@ -1,24 +1,8 @@
-// Promisses
-// Existem funções que demoram para retornam informações
+import { SOMAR } from "./lib/math"
+import { SUBTRAIR } from "./lib/math"
+import somadinha from "./lib/sum"
 
-// Async -> algum codigo dentro da função que demora para executar. 
-// Toda funcao que usar async, automaticamente vira uma promise
-async function buscaDadosNoGitHub() {
-  try{
-    const response = await fetch('https://api.github.com/users/migueldelgg');
-
-    const body = await response.json();
-
-    return body.name;
-  } catch(err) {
-    console.log(err)
-  } finally {
-    console.log('Enfim amigos, promises.')
-  }
-}
-
-buscaDadosNoGitHub().then(name => {
-  console.log(name)
-})
-  
-
+console.log(SOMAR(2,2))
+console.log(SUBTRAIR(4,2))
+console.log(somadinha(2,2))
+// Named Export
