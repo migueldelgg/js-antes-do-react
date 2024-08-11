@@ -2,7 +2,7 @@
 // Optional Chaining
 
 const user = {
-  name: 'Miguel',
+  //name: 'Miguel',
   age: 20,
   address: {
     street: 'Rua Teste',
@@ -17,10 +17,9 @@ const user = {
   }
 };
 
-//Tenta acessar o address do user, porém se não existir ele nao vai mais acessar o restante
+const key = 'state';
 
-// tenta acesar a funcao, se nao acessar retorna nao informado.
-document.body.innerText = user.address?.showFullAdress?.() ?? 'nao informado'
+document.body.innerText = user.address[key] ?? 'nao existe'
 
 
 
