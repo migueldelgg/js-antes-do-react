@@ -1,16 +1,26 @@
 
-// Short sintax
-
-const name ='Miguel'
-
-const age = 20
+// Optional Chaining
 
 const user = {
-  name, 
-  age
-}
+  name: 'Miguel',
+  age: 20,
+  address: {
+    street: 'Rua Teste',
+    number: 107,
+    zip: {
+      code: 895500,
+      city: 'Guarulhos'
+    },
+    //showFullAdress(){
+    //  return 'ok';
+    //}
+  }
+};
 
-document.body.innerText = JSON.stringify({user})
+//Tenta acessar o address do user, porém se não existir ele nao vai mais acessar o restante
+
+// tenta acesar a funcao, se nao acessar retorna nao informado.
+document.body.innerText = user.address?.showFullAdress?.() ?? 'nao informado'
 
 
 
