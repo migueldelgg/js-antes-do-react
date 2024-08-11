@@ -1,9 +1,19 @@
+// Promisses
+// Existem funções que demoram para retornam informações
 
-const array = [1, 2, 3, 4, 5]
 
-//Template Literals
+const somaDoisNumeros = (a, b) => {
+  return new Promise ((resolve, reject) => {
+    setTimeout(() => {
+      resolve(a+ b)
+    }, 2000)
+  });
+}
 
-const name = 'Miguel'
-const message = `Bem vindo, ${name ? name: 'Visitante'}`
-
-document.body.innerText = message
+somaDoisNumeros(1,2)
+  .then(soma => {
+    document.body.innerText  = soma
+  })
+  .catch(err => {
+    console.log(err)
+  })
