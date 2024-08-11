@@ -10,32 +10,23 @@ const user = {
   }
 };
 
-
-
-// Desestruturação -> remoção de parte do objeto para uma váriavel.
-// Atribuindo um valor default no nickname, mas se esse atributo existir no objeto, a preferencia de valor é do objeto.
-const { address, idade: age, nickname = 'Miguelzera' } = user
+// Desestruturação
 
 function mostraIdade({ name, idade }) {
   return name + " " + idade
 }
 
-document.body.innerText = mostraIdade(user)
+// Rest Operator -> operador de resto.
 
-/*o operador in serve para verificar se há um atributo dentro do objeto user
-document.body.innerText = ('name' in user)
+//const {name, idade, ...rest } = user;
 
-Retorna um array com todos os atributos presentes no objeto user
-document.body.innerText = Object.keys(user)
+const array = [1,2,3,4,5,6,7,8,9,10]
 
-Retorna os valores dos atributos
-document.body.innerText = Object.values(user)
+// Pulando o second do array.
+const [first, , third, ...rest] = array;
 
-Retorna os atributos e seus valores em formato json.
-document.body.innerText = JSON.stringify(Object.values(user))
+document.body.innerText = JSON.stringify({first, third, rest})
 
-Retorna um vetor com o objeto e seus valores. 
-document.body.innerText = JSON.stringify(Object.entries(user)) */
 
 
 
